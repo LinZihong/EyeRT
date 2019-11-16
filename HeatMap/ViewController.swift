@@ -68,7 +68,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         target.backgroundColor = UIColor.red
         target.frame = CGRect.init(x: 0,y:0 ,width:25 ,height:25)
         target.layer.cornerRadius = 12.5
-        sceneView.addSubview(target)
+//        sceneView.addSubview(target)
         
         // Set the view's delegate
         sceneView.delegate = self
@@ -179,7 +179,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             heatMapNode.geometry?.firstMaterial?.setValue(nsdata, forKey: "heatmapTexture")
             
             DispatchQueue.main.async(execute: {() -> Void in
-                self.target.center = CGPoint.init(x: CGFloat(coords.x), y:CGFloat(coords.y))
+//                self.target.center = CGPoint.init(x: CGFloat(coords.x), y:CGFloat(coords.y))
             })
         }
     }
