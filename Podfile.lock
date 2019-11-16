@@ -1,0 +1,20 @@
+PODS:
+  - LGButton (1.1.6)
+  - TORoundedButton (1.1.2)
+
+DEPENDENCIES:
+  - LGButton
+  - TORoundedButton
+
+SPEC REPOS:
+  trunk:
+    - LGButton
+    - TORoundedButton
+
+SPEC CHECKSUMS:
+  LGButton: 9f0a7f9d3030e3f504108342f6b66d64a429371b
+  TORoundedButton: d40dbf6f830dbe7a784a592d9f7933a3a49fd31e
+
+PODFILE CHECKSUM: fa79be9c609b7a4a6fce3fb2c72f598115e85772
+
+COCOAPODS: 1.8.4
