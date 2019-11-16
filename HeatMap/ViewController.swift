@@ -22,7 +22,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     var positions: Array<simd_float2> = Array()
     let numPositions = 10;
     
-    var eyeLasers : EyeLasers?
+    // var eyeLasers : EyeLasers?
     var eyeRaycastData : RaycastData?
     var virtualPhoneNode: SCNNode = SCNNode()
     
@@ -80,9 +80,9 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         let device = sceneView.device!
         let eyeGeometry = ARSCNFaceGeometry(device: device)!
-        eyeLasers = EyeLasers(geometry: eyeGeometry)
+        // eyeLasers = EyeLasers(geometry: eyeGeometry)
         eyeRaycastData = RaycastData(geometry: eyeGeometry)
-        sceneView.scene.rootNode.addChildNode(eyeLasers!)
+        // sceneView.scene.rootNode.addChildNode(eyeLasers!)
         sceneView.scene.rootNode.addChildNode(eyeRaycastData!)
         
         virtualPhoneNode.geometry?.firstMaterial?.isDoubleSided = true
@@ -137,9 +137,9 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     
     func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
         guard let faceAnchor = anchor as? ARFaceAnchor else { return }
-        eyeLasers?.transform = node.transform;
+        // eyeLasers?.transform = node.transform;
         eyeRaycastData?.transform = node.transform;
-        eyeLasers?.update(withFaceAnchor: faceAnchor)
+        // eyeLasers?.update(withFaceAnchor: faceAnchor)
         eyeRaycastData?.update(withFaceAnchor: faceAnchor)
     }
     
