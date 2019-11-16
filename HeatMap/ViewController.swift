@@ -65,6 +65,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        sceneView.scene.background.contents = UIColor.blue
+        
         target.backgroundColor = UIColor.red
         target.frame = CGRect.init(x: 0,y:0 ,width:25 ,height:25)
         target.layer.cornerRadius = 12.5
@@ -76,7 +78,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sceneView.automaticallyUpdatesLighting = true
         
         // Show statistics such as fps and timing information
-        sceneView.showsStatistics = true
+        sceneView.showsStatistics = false
         
         let device = sceneView.device!
         let eyeGeometry = ARSCNFaceGeometry(device: device)!
