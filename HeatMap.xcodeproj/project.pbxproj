@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -20,7 +20,7 @@
 
 /* Begin PBXFileReference section */
 		5753BD321CCEB04A7C6D56BD /* Pods_HeatMap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HeatMap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5A92A71920CEECB9002C1111 /* HeatMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeatMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A92A71920CEECB9002C1111 /* EyeRT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EyeRT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A92A71C20CEECB9002C1111 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A92A72020CEECB9002C1111 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5A92A72320CEECB9002C1111 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -59,7 +59,7 @@
 		5A92A71A20CEECB9002C1111 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5A92A71920CEECB9002C1111 /* HeatMap.app */,
+				5A92A71920CEECB9002C1111 /* EyeRT.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -86,7 +86,6 @@
 				9E3737220A0AB799B363B059 /* Pods-HeatMap.debug.xcconfig */,
 				A522FF885F51EF9DDCBDB927 /* Pods-HeatMap.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -117,7 +116,7 @@
 			);
 			name = HeatMap;
 			productName = HeatMap;
-			productReference = 5A92A71920CEECB9002C1111 /* HeatMap.app */;
+			productReference = 5A92A71920CEECB9002C1111 /* EyeRT.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -369,8 +368,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ZH.HeatMap;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = ZH.EyeRT;
+				PRODUCT_NAME = EyeRT;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -388,8 +387,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ZH.HeatMap;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = ZH.EyeRT;
+				PRODUCT_NAME = EyeRT;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
