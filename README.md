@@ -1,2 +1,7 @@
-# HeatMapEyeTracking
-A quick test with ARKit 2 implementing a heatmap for eye tracking
+# EyeRT
+
+Paint by staring at your phone!
+
+![IMG_0354](/Users/linzihong/Documents/Development/Xcode/iOS/HeatMapEyeTracking/IMG_0355.PNG)
+
+![IMG_0354](/Users/linzihong/Documents/Development/Xcode/iOS/HeatMapEyeTracking/IMG_0354.PNG)
