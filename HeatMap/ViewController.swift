@@ -9,6 +9,7 @@
 import UIKit
 import SceneKit
 import ARKit
+import TORoundedButton
 
 class ViewController: UIViewController, ARSCNViewDelegate {
 
@@ -25,6 +26,9 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     // var eyeLasers : EyeLasers?
     var eyeRaycastData : RaycastData?
     var virtualPhoneNode: SCNNode = SCNNode()
+    
+    // Create a session configuration
+    let configuration = ARFaceTrackingConfiguration()
     
     var virtualScreenNode: SCNNode = {
         
@@ -62,6 +66,37 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     
     var target : UIView = UIView()
     
+    var controlButton = RoundedButton(text: "Start")
+    var saveButton = RoundedButton(text: "Save")
+    
+    override func loadView() {
+        super.loadView()
+        
+        controlButton.tintColor = .orange
+        controlButton.tappedTintColorBrightnessOffset = -0.15
+        controlButton.tappedHandler = buttonTapped
+        sceneView.addSubview(controlButton)
+        controlButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        saveButton.tintColor = .green
+        saveButton.tappedTintColorBrightnessOffset = -0.15
+        sceneView.addSubview(saveButton)
+        saveButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            saveButton.bottomAnchor.constraint(equalTo: sceneView.safeAreaLayoutGuide.bottomAnchor),
+            controlButton.bottomAnchor.constraint(equalTo: sceneView.safeAreaLayoutGuide.bottomAnchor),
+            controlButton.leadingAnchor.constraint(equalTo: sceneView.safeAreaLayoutGuide.leadingAnchor, constant: 20.0),
+            saveButton.trailingAnchor.constraint(equalTo: sceneView.safeAreaLayoutGuide.trailingAnchor, constant: -20.0),
+            controlButton.heightAnchor.constraint(equalToConstant: 40),
+            saveButton.heightAnchor.constraint(equalToConstant: 40),
+            controlButton.widthAnchor.constraint(equalToConstant: 80),
+            saveButton.widthAnchor.constraint(equalToConstant: 80),
+//            saveButton.leadingAnchor.constraint(equalTo: controlButton.trailingAnchor, constant: 10.0),
+//            saveButton.widthAnchor.constraint(equalTo: controlButton.widthAnchor)
+        ])
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -95,16 +130,15 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         //sceneView.scene.rootNode.addChildNode(testSphereStart)
         //sceneView.scene.rootNode.addChildNode(testSphereEnd)
         self.sceneView.scene.rootNode.addChildNode(virtualPhoneNode)
+        
+        sceneView.session.pause()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        // Create a session configuration
-        let configuration = ARFaceTrackingConfiguration()
 
         // Run the view's session
-        sceneView.session.run(configuration)
+//        sceneView.session.run(configuration)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -112,6 +146,17 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         // Pause the view's session
         sceneView.session.pause()
+    }
+    
+    func buttonTapped() {
+        if controlButton.text == "Start" {
+            controlButton.text = "Stop"
+            sceneView.session.run(configuration)
+        }
+        else {
+            controlButton.text = "Start"
+            sceneView.session.pause()
+        }
     }
 
     // MARK: - ARSCNViewDelegate
