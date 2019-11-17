@@ -74,12 +74,13 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         controlButton.tintColor = .orange
         controlButton.tappedTintColorBrightnessOffset = -0.15
-        controlButton.tappedHandler = buttonTapped
+        controlButton.tappedHandler = controlButtonTapped
         sceneView.addSubview(controlButton)
         controlButton.translatesAutoresizingMaskIntoConstraints = false
         
         saveButton.tintColor = .green
         saveButton.tappedTintColorBrightnessOffset = -0.15
+        saveButton.tappedHandler = saveButtonTapped
         sceneView.addSubview(saveButton)
         saveButton.translatesAutoresizingMaskIntoConstraints = false
         
@@ -148,7 +149,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sceneView.session.pause()
     }
     
-    func buttonTapped() {
+    func controlButtonTapped() {
         if controlButton.text == "Start" {
             controlButton.text = "Stop"
             sceneView.session.run(configuration)
@@ -157,6 +158,16 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             controlButton.text = "Start"
             sceneView.session.pause()
         }
+    }
+    
+    func saveButtonTapped() {
+        controlButton.isHidden = true
+        saveButton.isHidden = true
+        Timer.scheduledTimer(withTimeInterval: 3, repeats: false, block: {(Timer) -> Void in
+            self.controlButton.isHidden = false
+            self.saveButton.isHidden = false
+        })
+        
     }
 
     // MARK: - ARSCNViewDelegate
